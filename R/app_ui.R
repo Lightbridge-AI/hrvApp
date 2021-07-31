@@ -1,3 +1,6 @@
+
+
+
 #' The application User-Interface
 #' 
 #' @param request Internal parameter for `{shiny}`. 
@@ -9,9 +12,8 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    fluidPage(
-      h1("hrvApp")
-    )
+    mod_read_hrv_ui("read_hrv_ui_1")
+
   )
 }
 
