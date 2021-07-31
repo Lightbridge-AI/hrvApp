@@ -9,3 +9,4 @@ $run_dev.*
 ^rsconnect$
 private
 my_data
+^README\.Rmd$
