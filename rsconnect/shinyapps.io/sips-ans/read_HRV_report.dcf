@@ -5,9 +5,9 @@ account: sips-ans
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3836524
-bundleId: 4874321
+bundleId: 4874382
 url: https://sips-ans.shinyapps.io/read_HRV_report/
-when: 1627713237.56107
+when: 1627715534.44436
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: private/read_hrv_Rmd.nb.html|private/read_hrv.nb.html|private/read_hrv.Rmd|my_data
