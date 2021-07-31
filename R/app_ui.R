@@ -12,7 +12,12 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    mod_read_hrv_ui("read_hrv_ui_1")
+    navbarPage("Combine HRV & BRS Report file",
+               mod_read_hrv_ui("read_hrv_ui_1"),
+               mod_read_brs_ui("read_brs_ui_1")
+               ),
+    
+    
 
   )
 }

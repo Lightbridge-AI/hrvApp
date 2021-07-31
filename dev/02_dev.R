@@ -18,6 +18,8 @@
 
 usethis::use_pipe()
 usethis::use_package("tools")
+usethis::use_package("readr")
+usethis::use_package("readtext")
 usethis::use_package("tibble")
 usethis::use_package("dplyr")
 usethis::use_package("purrr")
@@ -30,11 +32,12 @@ usethis::use_dev_package("physiolab", remote = "Lightbridge-AI/physiolab")
 ## Add modules ----
 ## Create a module infrastructure in R/
 golem::add_module( name = "read_hrv" ) # Name of the module
-#golem::add_module( name = "name_of_module2" ) # Name of the module
+golem::add_module( name = "read_brs" ) # Name of the module
 
 ## Add helper functions ----
 ## Creates ftc_* and utils_*
 golem::add_fct( "read_hrv" ) 
+golem::add_fct( "read_brs" ) 
 golem::add_utils( "helper" )
 
 ## Global Vars

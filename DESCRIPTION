@@ -13,6 +13,8 @@ Imports:
     physiolab (>= 0.0.0.9000),
     pkgload,
     purrr,
+    readr,
+    readtext,
     shiny (>= 1.6.0),
     stringr,
     tibble,
