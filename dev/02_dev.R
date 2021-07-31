@@ -19,6 +19,7 @@
 usethis::use_pipe()
 usethis::use_package("tools")
 usethis::use_package("tibble")
+usethis::use_package("dplyr")
 usethis::use_package("purrr")
 usethis::use_package("stringr")
 usethis::use_package("openxlsx")
@@ -34,8 +35,13 @@ golem::add_module( name = "read_hrv" ) # Name of the module
 ## Add helper functions ----
 ## Creates ftc_* and utils_*
 golem::add_fct( "read_hrv" ) 
-
 golem::add_utils( "helper" )
+
+## Global Vars
+# Put this in  R/globals.R
+# utils::globalVariables(c("var1"))
+usethis::use_r("globals.R")
+
 
 ## External resources
 ## Creates .js and .css files at inst/app/www
@@ -45,59 +51,24 @@ golem::add_utils( "helper" )
 
 ## Add internal datasets ----
 ## If you have data in your package
-usethis::use_data_raw( name = "my_dataset", open = FALSE ) 
+#usethis::use_data_raw( name = "my_dataset", open = FALSE ) 
 
 ## Tests ----
 ## Add one line by test you want to create
-usethis::use_test( "app" )
+#usethis::use_test( "app" )
 
 # Documentation
 
 ## Vignette ----
-usethis::use_vignette("hrvApp")
-devtools::build_vignettes()
+# usethis::use_vignette("hrvApp")
+# devtools::build_vignettes()
 
 ## Code Coverage----
 ## Set the code coverage service ("codecov" or "coveralls")
-usethis::use_coverage()
+#usethis::use_coverage()
 
 # Create a summary readme for the testthat subdirectory
-covrpage::covrpage()
-
-## CI ----
-## Use this part of the script if you need to set up a CI
-## service for your application
-## 
-## (You'll need GitHub there)
-usethis::use_github()
-
-# GitHub Actions
-usethis::use_github_action() 
-# Chose one of the three
-# See https://usethis.r-lib.org/reference/use_github_action.html
-usethis::use_github_action_check_release() 
-usethis::use_github_action_check_standard() 
-usethis::use_github_action_check_full() 
-# Add action for PR
-usethis::use_github_action_pr_commands()
-
-# Travis CI
-usethis::use_travis() 
-usethis::use_travis_badge() 
-
-# AppVeyor 
-usethis::use_appveyor() 
-usethis::use_appveyor_badge()
-
-# Circle CI
-usethis::use_circleci()
-usethis::use_circleci_badge()
-
-# Jenkins
-usethis::use_jenkins()
-
-# GitLab CI
-usethis::use_gitlab_ci()
+#covrpage::covrpage()
 
 # You're now set! ----
 # go to dev/03_deploy.R

@@ -46,6 +46,10 @@ usethis::use_git()
 usethis::use_git_ignore("private")
 usethis::use_git_ignore("my_data")
 
+
+usethis::use_build_ignore("private", escape = F)
+usethis::use_build_ignore("my_data", escape = F)
+
 ## Init Testing Infrastructure ----
 ## Create a template for tests
 #golem::use_recommended_tests()
