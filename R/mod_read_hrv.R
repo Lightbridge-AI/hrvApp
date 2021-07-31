@@ -14,53 +14,69 @@ img_size_2 <- (c(1836, 626)/2.5)
 #' @importFrom shiny NS tagList 
 mod_read_hrv_ui <- function(id){
   ns <- NS(id)
-  tagList(
-    navbarPage("Combine HRV & BRS Report file", 
                      
-                     tabPanel("LabChart's HRV",
-                              h3("About"),
-                              tags$blockquote("This application combine LabChart's HRV Report file(s) from .txt to single Excel table (one row per subject)."),
-                              
-                              helpText("For more details click: ",
-                                       tags$a(href = "https://docs.google.com/document/d/1BxbSswwprWD7XnMw1pWlaaNgB_brRmWAnfAYF0nUkI8/edit?usp=sharing", "Here")),
-                              
-                              
-                              br(),
-                              h3("Guides"),
-                              
-                              fluidRow(
-                                column(6,
-                                       helpText("1. Upload HRV report file in .txt (multiple files allowed)"),
-                                       fileInput(ns("file"), NULL, accept = c(".txt"),buttonLabel = "Upload files",
-                                                 placeholder = "choose HRV report .txt",multiple = TRUE)
-                                ),
-                                
-                                column(6,
-                                       helpText("2. Download combined Excel file"),
-                                       downloadButton(ns("download"), "Download HRV Report .xlsx"),
-                                       helpText("(The uploaded file name will be included in column \"File_name\".)")
-                                       
-                                )
-                                
-                              ),
-                              
-                              
-                              
-                              
-                              h4("Example: HRV Report file"),
-                              tags$img(src = "www/HRV_rep.png", height = img_size[2], width = img_size[1]),
-                              
-                              
-                              hr(),
-                              h3("Combined HRV Report"),
-                              dataTableOutput(ns("table")),
-                              
-                              
-                     )
-                     
-                     
+    tabPanel(
+      "LabChart's HRV",
+      h3("About"),
+      tags$blockquote(
+        "This application combine LabChart's HRV Report file(s) from .txt to single Excel table (one row per subject)."
+      ),
+      
+      helpText(
+        "For more details click: ",
+        tags$a(href = "https://docs.google.com/document/d/1BxbSswwprWD7XnMw1pWlaaNgB_brRmWAnfAYF0nUkI8/edit?usp=sharing", "Here")
+      ),
+      
+      
+      br(),
+      h3("Guides"),
+      
+      fluidRow(
+        column(
+          6,
+          helpText("1. Upload HRV report file in .txt (multiple files allowed)"),
+          fileInput(
+            ns("file"),
+            NULL,
+            accept = c(".txt"),
+            buttonLabel = "Upload files",
+            placeholder = "choose HRV report .txt",
+            multiple = TRUE
+          )
+        ),
+        
+        column(
+          6,
+          helpText("2. Download combined Excel file"),
+          downloadButton(ns("download"), "Download HRV Report .xlsx"),
+          helpText(
+            "(The uploaded file name will be included in column \"File_name\".)"
+          )
+          
+        )
+        
+      ),
+      
+      
+      
+      
+      h4("Example: HRV Report file"),
+      tags$img(
+        src = "www/HRV_rep.png",
+        height = img_size[2],
+        width = img_size[1]
+      ),
+      
+      
+      hr(),
+      h3("Combined HRV Report"),
+      dataTableOutput(ns("table")),
+      
+      
     )
-  )
+                     
+                     
+    
 }
     
 #' read_hrv Server Functions
